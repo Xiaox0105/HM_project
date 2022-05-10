@@ -1,1 +1,1 @@
-# HS_project
+# Hotel_project
