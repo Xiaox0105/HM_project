@@ -1,5 +1,3 @@
-// Nancy  - Final Project: Hotel Management System
-
 import java.text.ParseException;
 
 public class Manager {
