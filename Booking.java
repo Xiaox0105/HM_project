@@ -1,5 +1,3 @@
-// Nancy  - Final Project: Hotel Management System
-
 import java.text.ParseException;
 import java.util.Scanner;
 public class Booking {
