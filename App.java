@@ -1,8 +1,7 @@
 /* Final Project: Hotel Management System
-* Name: Nancy
-* Date: 5.20
-* 
-*  This program illustrate a simple hotel management system, the user can choose to enter guess mode or manager mode. In guess mode, the user can make room reservations, and in manager mode, you can view the expected income of the hotel for a specified range of dates and cancel bookings.
+*  This program illustrate a simple hotel management system, the user can choose to enter guess mode or manager mode. 
+*  In the guess mode, the user can make room reservations
+*  In the manager mode can view the expected profit of the hotel for a specified range of dates and cancel bookings.
 */
 
 import java.util.Date;
