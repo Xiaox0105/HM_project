@@ -1,5 +1,3 @@
-// Nancy  - Final Project: Hotel Management System
-
 public class Room {
 
     public enum roomType{ // four room types
