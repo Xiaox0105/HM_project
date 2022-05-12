@@ -36,7 +36,7 @@ public class Booking {
         }
     }   
 
-    public void checkAvailability(int startDay, int endDay) { // The integer startDay and endDay correspond to the array index of starting date and it of the ending date, therefore we could locate the date range in the arrays.
+    public String[] checkAvailability(int startDay, int endDay) { // The integer startDay and endDay correspond to the array index of starting date and it of the ending date, therefore we could locate the date range in the arrays.
 
         System.out.println("Please choose your room:"); // choose room type.
         System.out.println("The room types currently availabe are:"); // The result of the following loops tells which room types are available within the date range.
@@ -46,6 +46,8 @@ public class Booking {
         int checkKS = 0;
         int checkPS = 0;
 
+        String[] roomtype = new String[4];
+
         if (DR[startDay][1] == 0 && DR[endDay][0] <= 0) { // First, check if the starting date allows check in, and the ending date allows check out.
             for (int a = startDay + 1; a < endDay - 1; a++) {
                 for (int b = 0; b < 2; b++) {
@@ -54,6 +56,7 @@ public class Booking {
             }
             if (checkDR == 0) { // if confirmed there is no checkin or checkout activity within the date range, the room type is available.
                 System.out.println("(DR) Double Room");
+                roomtype[0] = "DR";
             }
         }
 
@@ -65,6 +68,7 @@ public class Booking {
             }
             if (checkKR == 0) { 
                 System.out.println("(KR) King Room");
+                roomtype[1] = "KR";
             }
         }
 
@@ -76,6 +80,7 @@ public class Booking {
             }
             if (checkKS == 0) {
                 System.out.println("(KS) King Suite");
+                roomtype[2] = "KS";
             }
         }
 
@@ -87,8 +92,10 @@ public class Booking {
             }
             if (checkPS == 0) {
                 System.out.println("(PS) Presidential Suit");
+                roomtype[3] = "PS";
             }
         }
+        return roomtype;
     }
 
     public void confirmation(int startDay, int endDay, String roomSelected) { 
