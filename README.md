@@ -18,5 +18,4 @@ Determined room availability by creating Date objects, formatting and parsing da
 > Cancel booking
 <img width="341" alt="Screen Shot 2022-05-12 at 1 09 49 PM" src="https://user-images.githubusercontent.com/105323843/168130817-41b26a26-a289-4546-90e1-924b77d469cb.png">
 
-[^1]:
-Features such as modifying prices, viewing the total number of available rooms, and adding specific room information such as floor numbers and room services for each type of room can be easily added.
+[^1]:Features such as modifying prices, viewing the total number of available rooms, and adding specific room information such as floor numbers and room services for each type of room can be easily added.
