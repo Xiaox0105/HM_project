@@ -32,7 +32,7 @@ public class App {
         first = myFormat.parse("01/01/2021"); // set the first day of the year to 01/01/2021, which corresponds to the
                                               // 0th index of the arrays.
 
-        System.out.println("Welcome to Raven’s Court Hotel. （Bookings open for 2021）");
+        System.out.println("Welcome to Nancy's Hotel. （Bookings open for 2021）");
 
         while (true) {
             System.out.println("\nGuest or Manager?"); // user interaction window
