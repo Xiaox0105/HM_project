@@ -4,7 +4,7 @@ This project simulates a simple hotel booking system.
 
 It allows guests to book rooms of different types that are available during the time selected, display the bill, and allows the manager to view total income of a time period and cancel bookings
 
-Data is stored through extensive use of 2D arrays
+Data is stored through extensive use of 2D arrays, which allows guests to check-out and check-in on the same day.
 
 Determined room availability by creating Date objects, formatting and parsing dates to match real-life calendar of 2021.
 
