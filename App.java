@@ -1,9 +1,3 @@
-/* Final Project: Hotel Management System
-*  This program illustrate a simple hotel management system, the user can choose to enter guess mode or manager mode. 
-*  In the guess mode, the user can make room reservations
-*  In the manager mode can view the expected profit of the hotel for a specified range of dates and cancel bookings.
-*/
-
 import java.util.Arrays;
 import java.util.Date;
 import java.text.ParseException;
@@ -44,8 +38,7 @@ public class App {
 
             } else if (inp.equalsIgnoreCase("Manager")) { // Enter the Manager Mode, check the total income within a
                                                           // date range.
-                System.out
-                        .println("(1) View expected income for a range of dates \n(2) Cancel an existing reservation");
+                System.out.println("(1) View expected income for a range of dates \n(2) Cancel an existing reservation");
                 int inp2 = input.nextInt();
 
                 if (inp2 == 1) {
@@ -70,7 +63,7 @@ public class App {
         while (true) {
             System.out.println("Starting date: (dd/MM/yyyy)");
             String Lowerbound = input.next(); // User input a date range
-            if (Lowerbound.charAt(2) != '/' || Lowerbound.charAt(5) != '/') {
+            if (Lowerbound.length() != 10 ||Lowerbound.charAt(2) != '/' || Lowerbound.charAt(5) != '/') {
                 System.out.println("Invalid date. Please re-enter the date with '/' in between");
                 continue;
             } else {
@@ -86,7 +79,7 @@ public class App {
         while (true) {
             System.out.println("Ending date: (dd/MM/yyyy)");
             String Upperbound = input.next(); // User input a date range
-            if (Upperbound.charAt(2) != '/' || Upperbound.charAt(5) != '/') {
+            if (Upperbound.length() != 10 || Upperbound.charAt(2) != '/' || Upperbound.charAt(5) != '/') {
                 System.out.println("Invalid date. Please re-enter the date with '/' in between");
                 continue;
             } else {
