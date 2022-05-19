@@ -1,8 +1,8 @@
 import java.util.Arrays;
-import java.util.Date;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
+import java.time.LocalDate;
+import java.time.format.*;
+import static java.time.temporal.ChronoUnit.DAYS;
 import java.util.Scanner;
 
 public class App {
@@ -10,21 +10,21 @@ public class App {
     static Booking bookings = new Booking(); // Construct new Booking object
     static Manager manager = new Manager(); // Construct new Manager object
 
-    static SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy"); // Construct a SimpleDateFormat for parsing
-                                                                           // String to LocalDate
+    static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // Construct a SimpleDateFormat for parsing
+                                                                           // String to Date
 
     static Room DR = new Room(150, Room.roomType.DR); // Construct new Room objects, assign price and room type.
     static Room KR = new Room(180, Room.roomType.KR);
     static Room KS = new Room(240, Room.roomType.KS);
     static Room PS = new Room(400, Room.roomType.PS);
 
-    static Date first;
+    static LocalDate first;
 
     public static void main(String[] args) throws ParseException {
 
         bookings.getStarted(); // initiate the program.
 
-        first = myFormat.parse("01/01/2021"); // set the first day of the year to 01/01/2021, which corresponds to the
+        first = LocalDate.parse("01/01/2021", formatter); // set the first day of the year to 01/01/2021, which corresponds to the
                                               // 0th index of the arrays.
 
         System.out.println("Welcome to Nancy's Hotel. （Bookings open for 2021）");
@@ -68,7 +68,7 @@ public class App {
                 System.out.println("Invalid date. Please re-enter the date with '/' in between");
                 continue;
             } else {
-                Date LB = myFormat.parse(Lowerbound); // Parse String input to LocalDate.
+                LocalDate LB = LocalDate.parse(Lowerbound, formatter); // Parse String input to Date.
                 int start = (int) daysBetween(LB, first); // Call the daysBetween method to calculate the days between
                                                           // 01/01/2021 and the starting(checkin) date
                 return start;
@@ -84,7 +84,7 @@ public class App {
                 System.out.println("Invalid date. Please re-enter the date with '/' in between");
                 continue;
             } else {
-                Date UB = myFormat.parse(Upperbound);
+                LocalDate UB = LocalDate.parse(Upperbound, formatter);
                 int end = (int) daysBetween(UB, first); // Call the daysBetween method to calculate the days between the
                                                         // 01/01/2021 and the ending(checkout) date
                 return end;
@@ -92,8 +92,8 @@ public class App {
         }
     }
 
-    public static long daysBetween(Date lB, Date first2) { // calculate days between two dates.
-        long difference = ((lB.getTime() - first2.getTime()) / 86400000);// milliseconds
+    public static long daysBetween(LocalDate one, LocalDate two) { // calculate days between two dates.
+        long difference = DAYS.between(one, two);
         return Math.abs(difference); // take the absolute value to make sure the method returns a positive number.
     }
 
