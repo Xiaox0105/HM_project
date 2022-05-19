@@ -6,7 +6,7 @@ It allows guests to book rooms of different types that are available during the 
 
 Data is stored through extensive use of 2D arrays, which allows guests to check-out and check-in on the same day.
 
-Determined room availability by creating Date objects, formatting and parsing dates to match real-life calendar of 2021.
+Determined room availability by creating LocalDate objects, formatting and parsing dates to match real-life calendar of 2021.
 
 > Booking
 <img width="415" alt="Screen Shot 2022-05-12 at 1 09 16 PM" src="https://user-images.githubusercontent.com/105323843/168130733-31d2e516-535a-4d48-a8f1-644113ea17a4.png">
