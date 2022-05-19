@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
 import java.util.Scanner;
 
 public class App {
@@ -10,7 +11,7 @@ public class App {
     static Manager manager = new Manager(); // Construct new Manager object
 
     static SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy"); // Construct a SimpleDateFormat for parsing
-                                                                           // String to Date
+                                                                           // String to LocalDate
 
     static Room DR = new Room(150, Room.roomType.DR); // Construct new Room objects, assign price and room type.
     static Room KR = new Room(180, Room.roomType.KR);
@@ -67,7 +68,7 @@ public class App {
                 System.out.println("Invalid date. Please re-enter the date with '/' in between");
                 continue;
             } else {
-                Date LB = myFormat.parse(Lowerbound); // Parse String input to Date.
+                Date LB = myFormat.parse(Lowerbound); // Parse String input to LocalDate.
                 int start = (int) daysBetween(LB, first); // Call the daysBetween method to calculate the days between
                                                           // 01/01/2021 and the starting(checkin) date
                 return start;
@@ -91,8 +92,8 @@ public class App {
         }
     }
 
-    public static long daysBetween(Date one, Date two) { // calculate days between two dates.
-        long difference = ((one.getTime() - two.getTime()) / 86400000);// milliseconds
+    public static long daysBetween(Date lB, Date first2) { // calculate days between two dates.
+        long difference = ((lB.getTime() - first2.getTime()) / 86400000);// milliseconds
         return Math.abs(difference); // take the absolute value to make sure the method returns a positive number.
     }
 
@@ -121,4 +122,3 @@ public class App {
         }
     }
 }
-
